@@ -8,7 +8,9 @@ fb=f(b);
 if(sign(fa)*sign(fb))>=0
     error('f(a)f(b)<0 not satisfied!')
 end
+step=0
 while(b-a)/2>tol
+    step=step+1
     c=(a+b)/2;
     fc=f(c);
     if(fc==0)
@@ -20,4 +22,5 @@ while(b-a)/2>tol
         a=c;fa=fc;
     end
 end
+fprintf('Step:%d',step)
 xc=(a+b)/2;
