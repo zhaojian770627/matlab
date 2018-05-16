@@ -8,9 +8,10 @@ fb=f(b);
 if(sign(fa)*sign(fb))>=0
     error('f(a)f(b)<0 not satisfied!')
 end
-step=0
+step=0;
 c=(b*f(a)-a*f(b))/(f(a)-f(b));
 fc=f(c);
+i=0
 while i<max
     step=step+1;
     if fc==0 
@@ -25,6 +26,7 @@ while i<max
         a=c;
         fa=f(a);
     end
+    i=i+1;
 end
 fprintf('Step:%d',step)
 xc=c;
