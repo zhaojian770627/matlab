@@ -2,7 +2,7 @@
 %计算f(x)的近似解
 %输入:函数句柄f;a,b使得f(a)*f(b)<0,以及容差tol
 %输出:近似解
-function xc=ReFa(f,a,b,tol,max)
+function xc=refa(f,a,b,tol,max)
 fa=f(a);
 fb=f(b);
 if(sign(fa)*sign(fb))>=0
