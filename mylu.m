@@ -35,4 +35,4 @@ for i=n:-1:1
     end
     x(i)=c(i)/U(i,i);
 end
-xc=x
+xc=x;
