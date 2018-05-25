@@ -1,7 +1,8 @@
-z=@(w,b,x) w*x+b	
+z=@(w,b,x) w*x+b
 -- 输出函数
 a=@(z) 1/(1+exp(-z))
 --导数
 ad=@(a,z) a(z) * (1 - a(z))
--- 计算误差
-a=@(w,b,x) 1/(1+exp(-(w*x+b)))
+---------------------------------------------------------------------
+z=@(w,b,x) w*x+b;a=@(z) 1/(1+exp(-z));ad=@(a,z) a(z) * (1 - a(z))
+w=.6;b=.9;zv=z(.6,.9,1);av=a(zv);deta=(av-0)*ad(a,zv);detab=deta;detaw=deta*1;w=w-.15*detaw;b=b-.15*detab;
