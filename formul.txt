@@ -6,4 +6,4 @@ ad=@(a,z) a(z) * (1 - a(z))
 ---------------------------------------------------------------------
 z=@(w,b,x) w*x+b;a=@(z) 1/(1+exp(-z));ad=@(a,z) a(z) * (1 - a(z))
 w=.6;b=.9;
-zv=z(w,b,1);av=a(zv);deta=(av-0)*ad(a,zv);detab=deta;detaw=deta*1;w=w-.15*detaw;b=b-.15*detab;
+zv=z(w,b,1),av=a(zv),deta=(av-0)*ad(a,zv),detab=deta,detaw=deta*1,w=w-.15*detaw,b=b-.15*detab
