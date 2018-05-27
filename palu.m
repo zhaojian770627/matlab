@@ -3,7 +3,15 @@
 %           B 值矩阵
 %           n 行数
 %输出:      解向量
-function [xc,A,P]=palu(A,B,n)
+function [xc,A,P]=palu(varargin)
+if nargin==3
+    A=varargin{1};
+    B=varargin{2};
+    n=varargin{3};
+elseif nargin==2
+    A=varargin{1};
+    n=varargin{2};   
+end
 P=eye(n);    % n阶单位阵
 for j=1:n-1
     % 寻找最大行并交换,对角线以下
@@ -30,6 +38,10 @@ for j=1:n-1
             A(i,k)=A(i,k)-mult*A(j,k);
         end
     end
+end
+if nargin==2
+    xc=[]
+    return
 end
 % LUx=b
 % Lc=b 解 c
