@@ -26,7 +26,7 @@ for i=1:n
     for j=1:i-1
         B(i)=B(i)-c(j)*L(i,j);
     end
-    c(i)=B(i)/L(i,i);
+    c(i)=B(i);
 end
 % Ux=c Çó x
 for i=n:-1:1
