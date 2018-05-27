@@ -3,7 +3,7 @@
 %           B 值矩阵
 %           n 行数
 %输出:      解向量
-function xc=palu(A,B,n)
+function [xc,A,P]=palu(A,B,n)
 P=eye(n);    % n阶单位阵
 for j=1:n-1
     % 寻找最大行并交换,对角线以下
