@@ -18,7 +18,7 @@ for j=1:n-1
     mv=A(j,j);
     mr=j;
     for i=j+1:n
-        if A(i,j)>mv
+        if abs(A(i,j))>abs(mv)
             mv=A(i,j);
             mr=i;
         end
