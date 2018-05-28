@@ -7,5 +7,5 @@ d=diag(a);      % 提取a的对角线元素
 r=a-diag(d);    % r为余项
 x=zeros(n,1);   % 初始化向量x
 for j=1:k
-    x=(b-r*x)./d;
+    x=(b'-r*x)./d;
 end
