@@ -21,3 +21,5 @@ plot(X,Y)
 w=2;b=2;
 for i=1:300 zv=z(w,b,1);av=a(zv);deta=(av-0);detab=deta;detaw=deta*1;w=w-.15*detaw;b=b-.15*detab;av,deta,w,b,Y(i)=av; end
 plot(X,Y)
+------------------------------
+f(x1,x2)=1/2*[x1 x2]*[3 2;2 6]*[x1;x2]-[2 -8]*[x1;x2]
