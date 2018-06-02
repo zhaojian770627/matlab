@@ -23,3 +23,11 @@ for i=1:300 zv=z(w,b,1);av=a(zv);deta=(av-0);detab=deta;detaw=deta*1;w=w-.15*det
 plot(X,Y)
 ------------------------------
 f(x1,x2)=1/2*[x1 x2]*[3 2;2 6]*[x1;x2]-[2 -8]*[x1;x2]
+
+syms x,x1,x2
+f(x)=1/2*x.'*A*c-b'*x;
+
+A=[3 2 ; 2 6]
+b=[2 ;-8]
+x=[x1;x2]
+f(x)=1/2*x.'*A*x-b'*x;
