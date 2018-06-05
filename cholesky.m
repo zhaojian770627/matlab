@@ -1,12 +1,15 @@
-%³ÌÐò ³þÁÐË¹»ù·Ö½â
+%ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½Ö½ï¿½
 function xc=cholesky(A)
-Rn=length(A);
+n=length(A);
 R=zeros(n);
 for k=1:n
     if A(k,k)<0
-        return
+        break;
     end
     R(k,k)=sqrt(A(k,k));
+    if k==n
+        break;
+    end
     Ut=A(k,k+1:n)./R(k,k);
     R(k,k+1:n)=Ut;
     A(k+1:n,k+1:n)=A(k+1:n,k+1:n)-Ut'*Ut;
