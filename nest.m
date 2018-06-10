@@ -1,38 +1,13 @@
-%³ÌÐò0.1 Ç¶Ì×³Ë·¨
-%Ê¹ÓÃ»ôÄÉ·½·¨ÒÔÇ¶Ì×ÐÎÊ½¼ÆËã¶àÏîÊ½µÄÖµ
-%ÊäÈë:
-%   ¶àÏîÊ½µÄ½×d
-%   d+1¸öÏµÊý¹¹³ÉµÄÊý×éc(µÚÒ»¸öÔªËØÎª³£ÊýÏî)
-%   x×ø±êÐèÒª½øÐÐÇóÖµµÄxÎ»ÖÃ
-%   Èç¹ûÐèÒªµÄ»°£¬»¹ÓÐd¸ö»ùµã¹¹³ÉµÄÊý×éb
+% ç¨‹åº0.1 åµŒå¥—ä¹˜æ³•
+% ä½¿ç”¨éœçº³æ–¹æ³•ä»¥åµŒå¥—å½¢å¼è®¡ç®—å¤šé¡¹å¼çš„å€¼Öµ
+% è¾“å…¥:å¤šé¡¹å¼çš„é˜¶d,
+%   d+1ä¸ªç³»æ•°æž„æˆçš„æ•°ç»„c(ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºå¸¸æ•°é¡¹)
+%   xåæ ‡éœ€è¦è¿›è¡Œæ±‚å€¼çš„xä½ç½®
+%   å¦‚æžœéœ€è¦çš„è¯ï¼Œè¿˜æœ‰dä¸ªåŸºç‚¹æž„æˆçš„æ•°ç»„b
+% è¾“å‡º:å¤šé¡¹å¼åœ¨xç‚¹å¯¹åº”çš„å€¼y
 function y=nest(d,c,x,b)
 if nargin<4,b=zeros(d,1);end
 y=c(d+1);
 for i=d:-1:1
     y=y.*(x-b(i))+c(i);
 end
-
-%³ÌÐò1.1 ¶þ·Ö·¨
-%¼ÆËãf(x)µÄ½üËÆ½â
-%ÊäÈë:º¯Êý¾ä±úf;a,bÊ¹µÃf(a)*f(b)<0,ÒÔ¼°ÈÝ²îtol
-%Êä³ö:½üËÆ½â
-function xc=bisect(f,a,b,tol)
-fa=f(a);
-fb=f(b);
-if(sign(fa)*sign(fb))>=0
-    error('f(a)f(b)<0 not satisfied!')
-end
-while(b-a)/2>tol
-    c=(a+b)/2;
-    fc=f(c);
-    if(fc==0)
-        break
-    end
-    if(sign(fc)*sign(fa)<0 % aºÍcÐÎ³ÉÒ»¸öÐÂµÄÇø¼ä
-        b=c;fb=fc;
-    else
-        a=c;fa=fc;
-    end
-end
-xc=(a+b)/2;
-    
