@@ -1,6 +1,6 @@
-%³ÌÐò Å£¶Ù·½·¨½â·½³Ì
-%ÊäÈë:º¯Êý¾ä±úg,µ¼Êýgd,³õÊ¼¹À¼Æx0,×îÐ¡Îó²î tol ×î´ó²½Êý max
-%Êä³ö:½üËÆ½âxc
+%ç¨‹åº ç‰›é¡¿æ–¹æ³•è§£æ–¹ç¨‹
+%è¾“å…¥:å‡½æ•°å¥æŸ„g,å¯¼æ•°gd,åˆå§‹ä¼°è®¡x0,æœ€å°è¯¯å·® tol æœ€å¤§æ­¥æ•° max
+%è¾“å‡º:è¿‘ä¼¼è§£xc
 function xc=norton(g,gd,x0,tol,max)
 x(1)=x0;
 x(2)=x(1)-g(x(1))/gd(x(1));

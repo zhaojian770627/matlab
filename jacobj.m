@@ -1,11 +1,11 @@
-%³ÌÐò2.1 ÑÅ¿É±È·½·¨
-%ÊäÈë: ÍêÈ«¾ØÕó»òÕßÏ¡Êè¾ØÕóa, r.h.s, b
-%Êä³ö: ½â x
+%ç¨‹åº2.1 é›…å¯æ¯”æ–¹æ³•
+%è¾“å…¥: å®Œå…¨çŸ©é˜µæˆ–è€…ç¨€ç–çŸ©é˜µa, r.h.s, b
+%è¾“å‡º: è§£ x
 function x=jacobj(a,b,k)
-n=length(b);    % È·¶¨n
-d=diag(a);      % ÌáÈ¡aµÄ¶Ô½ÇÏßÔªËØ
-r=a-diag(d);    % rÎªÓàÏî
-x=zeros(n,1);   % ³õÊ¼»¯ÏòÁ¿x
+n=length(b);    % ç¡®å®šn
+d=diag(a);      % æå–açš„å¯¹è§’çº¿å…ƒç´ 
+r=a-diag(d);    % rä¸ºä½™é¡¹
+x=zeros(n,1);   % åˆå§‹åŒ–å‘é‡x
 for j=1:k
     x=(b'-r*x)./d;
 end

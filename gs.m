@@ -1,8 +1,8 @@
-%³ÌÐò ¸ßË¹ÏûÈ¥·¨½â·½³Ì×é
-%ÊäÈë:      A ÏµÊý¾ØÕó
-%B Öµ¾ØÕó
-%n ÐÐÊý
-%Êä³ö:½âÏòÁ¿
+%ç¨‹åº é«˜æ–¯æ¶ˆåŽ»æ³•è§£æ–¹ç¨‹ç»„
+%è¾“å…¥:      A ç³»æ•°çŸ©é˜µ
+%B å€¼çŸ©é˜µ
+%n è¡Œæ•°
+%è¾“å‡º:è§£å‘é‡
 function xc=gs(A,B,n)
 for j=1:n-1
     if abs(A(j,j))<eps; error('zero pivot encountered'); end

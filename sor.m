@@ -1,6 +1,6 @@
-%³ÌÐò SOR Á¬ÐøËÉ³Ú·½·¨
-%ÊäÈë: ÍêÈ«¾ØÕó»òÕßÏ¡Êè¾ØÕóa, r.h.s, b
-%Êä³ö: ½â x
+%ç¨‹åº SOR è¿žç»­æ¾å¼›æ–¹æ³•
+%è¾“å…¥: å®Œå…¨çŸ©é˜µæˆ–è€…ç¨€ç–çŸ©é˜µa, r.h.s, b
+%è¾“å‡º: è§£ x
 function x=sor(a,b,w,k)
 n=length(b);   
 d=diag(a);     

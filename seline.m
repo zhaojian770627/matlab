@@ -1,6 +1,6 @@
-%³ÌÐò ¸îÏß·½·¨½â·½³Ì
-%ÊäÈë:º¯Êý¾ä±úg,³õÊ¼¹À¼Æx0,x1 ×îÐ¡Îó²î tol ×î´ó²½Êý max
-%Êä³ö:½üËÆ½âxc
+%ç¨‹åº å‰²çº¿æ–¹æ³•è§£æ–¹ç¨‹
+%è¾“å…¥:å‡½æ•°å¥æŸ„g,åˆå§‹ä¼°è®¡x0,x1 æœ€å°è¯¯å·® tol æœ€å¤§æ­¥æ•° max
+%è¾“å‡º:è¿‘ä¼¼è§£xc
 function xc=seline(g,x0,x1,tol,max)
 x(1)=x0;
 x(2)=x1;

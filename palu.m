@@ -1,8 +1,8 @@
-%³ÌĞò PA=LU·Ö½â·½³Ì×é
-%ÊäÈë:      A ÏµÊı¾ØÕó
-%           B Öµ¾ØÕó
-%           n ĞĞÊı
-%Êä³ö:      ½âÏòÁ¿
+%ç¨‹åº PA=LUåˆ†è§£æ–¹ç¨‹ç»„
+%è¾“å…¥:      A ç³»æ•°çŸ©é˜µ
+%           B å€¼çŸ©é˜µ
+%           n è¡Œæ•°
+%è¾“å‡º:      è§£å‘é‡
 function [xc,A,P]=palu(varargin)
 if nargin==3
     A=varargin{1};
@@ -12,9 +12,9 @@ elseif nargin==2
     A=varargin{1};
     n=varargin{2};   
 end
-P=eye(n);    % n½×µ¥Î»Õó
+P=eye(n);    % né˜¶å•ä½é˜µ
 for j=1:n-1
-    % Ñ°ÕÒ×î´óĞĞ²¢½»»»,¶Ô½ÇÏßÒÔÏÂ
+    % å¯»æ‰¾æœ€å¤§è¡Œå¹¶äº¤æ¢,å¯¹è§’çº¿ä»¥ä¸‹
     mv=A(j,j);
     mr=j;
     for i=j+1:n
@@ -24,13 +24,13 @@ for j=1:n-1
         end
     end
     if mr~=j
-        % ½»»»µ¥Î»Õó
+        % äº¤æ¢å•ä½é˜µ
         P([j mr],:)=P([mr j],:);
-        % ½»»»ÏµÊı¾ØÕó
+        % äº¤æ¢ç³»æ•°çŸ©é˜µ
         A([j mr],:)=A([mr j],:);
     end  
         
-    % °´A¼ÆËã
+    % æŒ‰Aè®¡ç®—
     for i=j+1:n
         mult=A(i,j)/A(j,j);
         A(i,j)=mult;
@@ -44,7 +44,7 @@ if nargin==2
     return
 end
 % LUx=b
-% Lc=b ½â c
+% Lc=b è§£ c
 c=zeros(1,3);
 PB=P*B';
 for i=1:n
@@ -54,7 +54,7 @@ for i=1:n
     c(i)=PB(i);
 end
 
-% Ux=c Çó x
+% Ux=c æ±‚ x
 for i=n:-1:1
     for j=i+1:n
         c(i)=c(i)-A(i,j)*x(j);

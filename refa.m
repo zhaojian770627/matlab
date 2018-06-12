@@ -1,7 +1,7 @@
-%³ÌÐò ÊÔÎ»·½·¨
-%¼ÆËãf(x)µÄ½üËÆ½â
-%ÊäÈë:º¯Êý¾ä±úf;a,bÊ¹µÃf(a)*f(b)<0,ÒÔ¼°ÈÝ²îtol
-%Êä³ö:½üËÆ½â
+%ç¨‹åº è¯•ä½æ–¹æ³•
+%è®¡ç®—f(x)çš„è¿‘ä¼¼è§£
+%è¾“å…¥:å‡½æ•°å¥æŸ„f;a,bä½¿å¾—f(a)*f(b)<0,ä»¥åŠå®¹å·®tol
+%è¾“å‡º:è¿‘ä¼¼è§£
 function xc=refa(f,a,b,tol,max)
 fa=f(a);
 fb=f(b);
@@ -19,7 +19,7 @@ while i<max
     end
     c=(b*fa-a*fb)/(fa-fb);
     fc=f(c);
-    if sign(fa)*sign(fc)<0 % aºÍcÐÎ³ÉÒ»¸öÐÂµÄÇø¼ä
+    if sign(fa)*sign(fc)<0 % aå’Œcå½¢æˆä¸€ä¸ªæ–°çš„åŒºé—´
         b=c;
         fb=f(b);
     else

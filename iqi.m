@@ -1,6 +1,6 @@
-%³ÌÐò IQI·½·¨½â·½³Ì
-%ÊäÈë:º¯Êý¾ä±úg,³õÊ¼¹À¼Æx0,x1,x2 ×îÐ¡Îó²î tol ×î´ó²½Êý max
-%Êä³ö:½üËÆ½âxc
+%ç¨‹åº IQIæ–¹æ³•è§£æ–¹ç¨‹
+%è¾“å…¥:å‡½æ•°å¥æŸ„g,åˆå§‹ä¼°è®¡x0,x1,x2 æœ€å°è¯¯å·® tol æœ€å¤§æ­¥æ•° max
+%è¾“å‡º:è¿‘ä¼¼è§£xc
 function xc=iqi(g,x1,x2,x3,tol,max)
 x(1)=x1;
 x(2)=x2;

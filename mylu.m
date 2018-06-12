@@ -1,10 +1,10 @@
-%³ÌÐò LU·Ö½â·½³Ì×é
-%ÊäÈë:      A ÏµÊý¾ØÕó
-%B Öµ¾ØÕó
-%n ÐÐÊý
-%Êä³ö:½âÏòÁ¿
+%ç¨‹åº LUåˆ†è§£æ–¹ç¨‹ç»„
+%è¾“å…¥:      A ç³»æ•°çŸ©é˜µ
+%B å€¼çŸ©é˜µ
+%n è¡Œæ•°
+%è¾“å‡º:è§£å‘é‡
 function xc=mylu(U,B,n)
-L=zeros(n);  % L¾ØÕó
+L=zeros(n);  % LçŸ©é˜µ
 for j=1:n-1
     if abs(U(j,j))<eps; error('zero pivot encountered'); end
     for i=j+1:n
@@ -20,7 +20,7 @@ for j=1:n
     L(j,j)=1;
 end
 % LUx=b
-% Lc=b ½â c
+% Lc=b è§£ c
 c=zeros(1,3);
 for i=1:n
     for j=1:i-1
@@ -28,7 +28,7 @@ for i=1:n
     end
     c(i)=B(i);
 end
-% Ux=c Çó x
+% Ux=c æ±‚ x
 for i=n:-1:1
     for j=i+1:n
         c(i)=c(i)-U(i,j)*x(j);
