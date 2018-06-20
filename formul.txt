@@ -41,6 +41,7 @@ i=1;
 for b=bs
     y=a(8,b,x);
     plot(x,y);
+    t{i}=num2str(b);
+    i=i+1;
 end
-tsr=num2str(bs)
-legend(tsr);
+legend(t);
