@@ -31,7 +31,7 @@ A(n,n)=1;
 coeff=zeros(n,3);
 coeff(:,2)=A\r; % 求解系数c
 for i=1:n-1 % 求解b和d
-    coeff(i,3)=(coeff(i+1,2)-coeff(i,2))/(3*dx(i));
-    coeff(i,1)=dy(i)/dx(i)-dx(i)*(2*coeff(i,2)+coeff(i+1,2))/3;
+    coeff(i,3)=(coeff(i+1,2)-coeff(i,2))/(3*dx(i)); % 求解d
+    coeff(i,1)=dy(i)/dx(i)-dx(i)*(2*coeff(i,2)+coeff(i+1,2))/3; % 求解b
 end
 coeff=coeff(1:n-1,1:3);
