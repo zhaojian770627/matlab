@@ -124,6 +124,8 @@ mesh(X,Y,Z);
 L=A'*A;R=A'*B;
 X=L\R;
 -----------豪斯霍尔德反射子
+x=A(:,1)
+w=[normest(x);0] 
 v=w-x
 P=v*v'\(v'*v)
 H=I-2*P
