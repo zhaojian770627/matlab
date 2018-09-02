@@ -129,5 +129,7 @@ w=[normest(x);0]
 v=w-x
 P=v*v'/(v'*v)
 H=I-2*P
+R=H*A
+Q=H
 ------------投影-----------
 Projy=(y'*u)/(u'*u)*u
