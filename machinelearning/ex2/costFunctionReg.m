@@ -20,11 +20,9 @@ grad = zeros(size(theta));
 m=length(X);
 z=X*theta;
 h=sigmoid(z);
-J=-1*sum(y.*log(h)+(1-y).*log(1-h))/m + sum(theta.^2)*lambda/(2*m); % 需要在校对一下，包含不包含theta的第一个
-Xi=X';
-grad0=(Xi(1,:) *(h-y))./m;
-gradL=(Xi(2:end,:) *(h-y))./m+lambda/m*grad(2:end,:);
-grad=[grad0;gradL];
+thetai=[0;theta(2:end)]; 
+J=-1*sum(y.*log(h)+(1-y).*log(1-h))/m + sum(thetai.^2)*lambda/(2*m); % 需要在校对一下，包含不包含theta的第一个
+grad=(X' *(h-y))./m+lambda/m*thetai;
 % =============================================================
 
 end
