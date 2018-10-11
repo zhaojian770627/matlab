@@ -22,8 +22,9 @@ z=X*theta;
 h=sigmoid(z);
 J=-1*sum(y.*log(h)+(1-y).*log(1-h))/m + sum(theta^2);
 Xi=X',
-grad=(Xi(1,:) *(h-y))./m;
-
+grad0=(Xi(1,:) *(h-y))./m;
+gradL=(Xi(2:ebd,:) *(h-y))./m+lambda/m*grad(2:end,:);
+grad=[grad0;gradL]
 % =============================================================
 
 end
