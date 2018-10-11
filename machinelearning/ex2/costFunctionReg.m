@@ -20,8 +20,9 @@ grad = zeros(size(theta));
 m=length(X);
 z=X*theta;
 h=sigmoid(z);
-cost=-1*sum(y.*log(h)+(1-y).*log(1-h))/m;
-grad=(X'*(h-y))./m;
+J=-1*sum(y.*log(h)+(1-y).*log(1-h))/m + sum(theta^2);
+Xi=X',
+grad=(Xi(1,:) *(h-y))./m;
 
 % =============================================================
 
