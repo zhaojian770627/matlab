@@ -24,10 +24,10 @@ p = zeros(size(X, 1), 1);
 
 % =========================================================================
 X = [ones(m, 1) X];
-z1=X*Theta1;
-a1=simoid(z1);
+z1=X*Theta1';
+a1=sigmoid(z1);
 aa1=[ones(m,1) a1];
 z2=aa1*Theta2';
-a2=simoid(z2);
+a2=sigmoid(z2);
 [M,p]= max(a2,[],2);
 end
