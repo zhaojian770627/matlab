@@ -67,6 +67,15 @@ Theta2_grad = zeros(size(Theta2));
 % -------------------------------------------------------------
 
 % =========================================================================*
+
+delta_1 = zeros(size(Theta1));
+delta_2 = zeros(size(Theta2));
+
+temp1 = [zeros(size(Theta1,1),1) Theta1(:,2:end)];   % 先把theta(1)拿掉，不参与正则化
+temp2 = [zeros(size(Theta2,1),1) Theta2(:,2:end)];
+temp1 = sum(temp1 .^2);     % 计算每个参数的平方，再就求和
+temp2 = sum(temp2 .^2);
+
 for i=1:m
     yi=zeros(num_labels,1);
     xi=X(i,:);
@@ -75,13 +84,27 @@ for i=1:m
     
     % 第一层输出
     xi = [1 xi];
-    a=sigmoid(xi*Theta1');
+    z2=xi*Theta1';
+    a=sigmoid(z2);
     aa=[1 a];
-    o=sigmoid(aa*Theta2');
+    z3=aa*Theta2';
+    o=sigmoid(z3);
     h=o';
-    J = J+ (-1*sum(yi.*log(h)+(1-yi).* log(1-h)));
+    cost = -1*sum(yi.*log(h)+(1-yi).* log(1-h));
+    J= J + cost;
+    % 计算梯度
+    error3= h - yi;
+    
+    error2=Theta2'*error3;
+    error2 = error2(2:end).* sigmoidGradient(z2');
+    
+    delta_2 = delta_2 + error3 * aa;
+    delta_1 = delta_1 + error2 * xi;
 end
-J=J/m+lambda*sum(nn_params.^2)/2/m;
+J=J/m+lambda/(2*m) * ( sum(temp1(:))+ sum(temp2(:))); 
+
+Theta2_grad=Theta2_grad/m;
+Theta1_grad=Theta1_grad/m;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
