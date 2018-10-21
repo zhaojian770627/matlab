@@ -78,12 +78,11 @@ temp2 = sum(temp2 .^2);
 
 for i=1:m
     yi=zeros(num_labels,1);
-    
-    a1=X(i,:);
     yv=y(i);
     yi(yv)=1;
-    
+       
     % 第一层
+    a1=X(i,:);
     a1 = [1 a1];
     
     % 第二层
