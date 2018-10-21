@@ -78,33 +78,43 @@ temp2 = sum(temp2 .^2);
 
 for i=1:m
     yi=zeros(num_labels,1);
-    xi=X(i,:);
+    
+    a1=X(i,:);
     yv=y(i);
     yi(yv)=1;
     
-    % 第一层输出
-    xi = [1 xi];
-    z2=xi*Theta1';
-    a=sigmoid(z2);
-    aa=[1 a];
-    z3=aa*Theta2';
-    o=sigmoid(z3);
-    h=o';
+    % 第一层
+    a1 = [1 a1];
+    
+    % 第二层
+    z2=a1*Theta1';
+    a2=sigmoid(z2);
+    a2=[1 a2];
+    
+    % 第三层 输出
+    z3=a2*Theta2';
+    a3=sigmoid(z3);
+    
+    h=a3';
+    
     cost = -1*sum(yi.*log(h)+(1-yi).* log(1-h));
     J= J + cost;
+    
     % 计算梯度
     error3= h - yi;
     
     error2=Theta2'*error3;
     error2 = error2(2:end).* sigmoidGradient(z2');
     
-    delta_2 = delta_2 + error3 * aa;
-    delta_1 = delta_1 + error2 * xi;
+    delta_2 = delta_2 + error3 * a2;
+    delta_1 = delta_1 + error2 * a1;
 end
 J=J/m+lambda/(2*m) * ( sum(temp1(:))+ sum(temp2(:))); 
 
-Theta2_grad=Theta2_grad/m;
-Theta1_grad=Theta1_grad/m;
+Theta1_temp = [zeros(size(Theta1,1),1) Theta1(:,2:end)];
+Theta2_temp = [zeros(size(Theta2,1),1) Theta2(:,2:end)];
+Theta1_grad = 1 / m * delta_1 + lambda/m * Theta1_temp;
+Theta2_grad = 1 / m * delta_2 + lambda/m * Theta2_temp ;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
