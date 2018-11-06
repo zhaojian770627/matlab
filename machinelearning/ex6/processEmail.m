@@ -98,7 +98,7 @@ while ~isempty(email_contents)
     %
 
     % =============================================================
-
+    fprintf('%s ',str);
 
     % Print to screen, ensuring that the output lines are not too long
 
